@@ -1,9 +1,9 @@
 <?php 
 require_once "bdd.php"; //Inclut le fichier de connexion à la base de données
 
-$pdo = connexion(); //Connexion à la base de données avec PDO
+$pdo = connection(); //Connexion à la base de données avec PDO
 
-// Récupère toutes les œuvres depuis la base de données
+//Récupère toutes les œuvres depuis la base de données
 $stmt = $pdo->query("SELECT * FROM artworks");
 $artworks = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>

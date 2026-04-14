@@ -1,6 +1,6 @@
 <?php
 
-function connexion()
+function connection()
 {
     return new PDO(
         "mysql:host=localhost;dbname=artbox;charset=utf8mb4",

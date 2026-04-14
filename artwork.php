@@ -1,7 +1,7 @@
 <?php
 require_once "bdd.php"; //Inclut le fichier de connexion à la base de données
 
-$pdo = connexion(); //Connexion à la base de données avec PDO
+$pdo = connection(); //Connexion à la base de données avec PDO
 
 // 1. Vérifier si l'id est présent dans l'URL et valide
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
