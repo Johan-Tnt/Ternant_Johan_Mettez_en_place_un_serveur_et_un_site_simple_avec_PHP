@@ -49,7 +49,7 @@ $stmt->execute([
     "title" => htmlspecialchars($title),
     "artist" => htmlspecialchars($artist),
     "image" => htmlspecialchars($image),
-    "description" => htmlspecialchars($description)
+    "description" => htmlspecialchars($description),
 ]);
 
 //Redirection à la page d’accueil pour afficher la nouvelle œuvre ajoutée
