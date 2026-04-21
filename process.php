@@ -10,7 +10,7 @@ if (
     !isset($_POST['description'])
 ) {
     //Si une donnée manque → retour au formulaire
-    header("Location: add_artwork.php");
+    header("Location: add_artwork.php?error=missing_data");
     exit;
 }
 
@@ -22,19 +22,19 @@ $description = trim($_POST['description']);
 
 //Validation des champs obligatoires, le titre et l’artiste sont requis pour créer une œuvre valide
 if ($title === "" || $artist === "") {
-    header("Location: add_artwork.php");
+    header("Location: add_artwork.php?error=empty_fields");
     exit;
 }
 
 //Validation de la description, impose une longueur minimale pour éviter des contenus vides
 if (strlen($description) < 3) {
-    header("Location: add_artwork.php");
+    header("Location: add_artwork.php?error=description_short");
     exit;
 }
 
 // Validation de l’URL de l’image, FILTER_VALIDATE_URL vérifie que la chaîne respecte un format d’URL valide (http, https, etc.)
 if (!filter_var($image, FILTER_VALIDATE_URL)) {
-    header("Location: add_artwork.php");
+    header("Location: add_artwork.php?error=invalid_url");
     exit;
 }
 
